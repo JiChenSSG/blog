@@ -4,6 +4,138 @@
   
   
   <entry>
+    <title>nodejs 安装&amp;配置</title>
+    <link href="/blog/2023/01/08/nodejs-%E5%AE%89%E8%A3%85-%E9%85%8D%E7%BD%AE/"/>
+    <url>/blog/2023/01/08/nodejs-%E5%AE%89%E8%A3%85-%E9%85%8D%E7%BD%AE/</url>
+    
+    <content type="html"><![CDATA[<h1 id="nodejs-安装-amp-配置"><a href="#nodejs-安装-amp-配置" class="headerlink" title="nodejs 安装 &amp; 配置"></a>nodejs 安装 &amp; 配置</h1><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs sh"><span class="hljs-comment"># 压缩包安装</span><br>wget https://nodejs.org/dist/v18.13.0/node-v18.13.0-linux-x64.tar.xz<br><br>tar -xvf node-v18.13.0-linux-x64.tar.xz<br><span class="hljs-built_in">rm</span> node-v18.13.0-linux-x64.tar.xz<br><span class="hljs-built_in">mv</span> node-v18.13.0-linux-x64 node<br><br><span class="hljs-comment"># 修复问题 zsh: /mnt/d/nodejs//npm: bad interpreter: /bin/sh^M: no such file or directory</span><br>sed -i <span class="hljs-string">&quot;1i export PATH=<span class="hljs-subst">$(echo <span class="hljs-string">&quot;<span class="hljs-variable">$PATH</span>&quot;</span> | sed -e &#x27;s/:\/mnt[^:]*//g&#x27;)</span> # strip out problematic Windows %PATH%&quot;</span> ~/.zshrc<br><br><span class="hljs-comment"># 修改安装路径</span><br><span class="hljs-built_in">mkdir</span> -p ~/npmInstall/node_global<br><span class="hljs-built_in">mkdir</span> -p ~/npmInstall/node_cache<br><br>npm config <span class="hljs-built_in">set</span> prefix <span class="hljs-string">&quot;~/npmInstall/node_global&quot;</span><br>npm config <span class="hljs-built_in">set</span> cache <span class="hljs-string">&quot;~/npmInstall/node_cache&quot;</span><br><br><span class="hljs-comment"># 配置淘宝镜像</span><br>npm config <span class="hljs-built_in">set</span> registry http://registry.npmmirror.com<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>开发</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>配置</tag>
+      
+      <tag>Linux</tag>
+      
+      <tag>开发</tag>
+      
+      <tag>nodejs</tag>
+      
+      <tag>npm</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Wsl 配置</title>
+    <link href="/blog/2023/01/08/Wsl-%E9%85%8D%E7%BD%AE/"/>
+    <url>/blog/2023/01/08/Wsl-%E9%85%8D%E7%BD%AE/</url>
+    
+    <content type="html"><![CDATA[<h1 id="wsl2配置"><a href="#wsl2配置" class="headerlink" title="wsl2配置"></a>wsl2配置</h1><h2 id="局域网访问"><a href="#局域网访问" class="headerlink" title="局域网访问"></a>局域网访问</h2><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs cmd"># windows防火墙规则开启端口<br><br># 映射<br>netsh interface portproxy add v4tov4 listenport=<span class="hljs-number">22</span> listenaddress=<span class="hljs-number">0</span>.<span class="hljs-number">0</span>.<span class="hljs-number">0</span>.<span class="hljs-number">0</span> connectport=<span class="hljs-number">22</span> connectaddress=$&#123;wsl2地址&#125;<br></code></pre></td></tr></table></figure><h2 id="固定ip"><a href="#固定ip" class="headerlink" title="固定ip"></a>固定ip</h2><h3 id="Debian"><a href="#Debian" class="headerlink" title="Debian"></a>Debian</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs ssh">sudo ip addr del $(ip addr show eth0 | grep &#x27;inet\b&#x27; | awk &#x27;&#123;print $2&#125;&#x27; | head -n 1) dev eth0<br>sudo ip addr add 192.168.50.2/24 broadcast 192.168.50.255 dev eth0<br>sudo ip route add 0.0.0.0/0 via 192.168.50.1 dev eth0<br>sudo echo nameserver 192.168.50.1 &gt; /etc/resolv.conf<br></code></pre></td></tr></table></figure><h3 id="windows-11"><a href="#windows-11" class="headerlink" title="windows(11)"></a>windows(11)</h3><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs cmd">Get-NetAdapter -IncludeHidden -Name &#x27;vEthernet (WSL)&#x27; | Get-NetIPAddress |Remove-NetIPAddress -Confirm:$False<br>New-NetIPAddress -IPAddress <span class="hljs-number">192</span>.<span class="hljs-number">168</span>.<span class="hljs-number">50</span>.<span class="hljs-number">1</span> -PrefixLength <span class="hljs-number">24</span> -InterfaceAlias &#x27;vEthernet (WSL)&#x27;<br>Get-NetNat | ? Name -Eq WSLNat | Remove-NetNat -Confirm:$False<br>New-NetNat -Name WSLNat -InternalIPInterfaceAddressPrefix <span class="hljs-number">192</span>.<span class="hljs-number">168</span>.<span class="hljs-number">50</span>.<span class="hljs-number">0</span>/<span class="hljs-number">24</span>;<br></code></pre></td></tr></table></figure><h3 id="一键脚本"><a href="#一键脚本" class="headerlink" title="一键脚本"></a>一键脚本</h3><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs cmd">wsl -d Debian -u root ip addr <span class="hljs-built_in">del</span> $(ip addr show eth0 ^| grep &#x27;inet\b&#x27; ^| awk &#x27;&#123;<span class="hljs-built_in">print</span> $<span class="hljs-number">2</span>&#125;&#x27; ^| head -n <span class="hljs-number">1</span>) dev eth0<br>wsl -d Debian -u root ip addr add <span class="hljs-number">192</span>.<span class="hljs-number">168</span>.<span class="hljs-number">50</span>.<span class="hljs-number">2</span>/<span class="hljs-number">24</span> broadcast <span class="hljs-number">192</span>.<span class="hljs-number">168</span>.<span class="hljs-number">50</span>.<span class="hljs-number">255</span> dev eth0<br>wsl -d Debian -u root ip route add <span class="hljs-number">0</span>.<span class="hljs-number">0</span>.<span class="hljs-number">0</span>.<span class="hljs-number">0</span>/<span class="hljs-number">0</span> via <span class="hljs-number">192</span>.<span class="hljs-number">168</span>.<span class="hljs-number">50</span>.<span class="hljs-number">1</span> dev eth0<br>wsl -d Debian -u root <span class="hljs-built_in">echo</span> nameserver <span class="hljs-number">192</span>.<span class="hljs-number">168</span>.<span class="hljs-number">50</span>.<span class="hljs-number">1</span> ^&gt; /etc/resolv.conf<br>powershell -c &quot;Get-NetAdapter -IncludeHidden -Name &#x27;vEthernet (WSL)&#x27; | Get-NetIPAddress |Remove-NetIPAddress -Confirm:$False; New-NetIPAddress -IPAddress <span class="hljs-number">192</span>.<span class="hljs-number">168</span>.<span class="hljs-number">50</span>.<span class="hljs-number">1</span> -PrefixLength <span class="hljs-number">24</span> -InterfaceAlias &#x27;vEthernet (WSL)&#x27;; Get-NetNat | ? Name -Eq WSLNat | Remove-NetNat -Confirm:$False; New-NetNat -Name WSLNat -InternalIPInterfaceAddressPrefix <span class="hljs-number">192</span>.<span class="hljs-number">168</span>.<span class="hljs-number">50</span>.<span class="hljs-number">0</span>/<span class="hljs-number">24</span>;&quot;<br></code></pre></td></tr></table></figure><h3 id="脚本开机自启"><a href="#脚本开机自启" class="headerlink" title="脚本开机自启"></a>脚本开机自启</h3><p>win + R 开启 shell:startup<br>将脚本放入</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>开发</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>配置</tag>
+      
+      <tag>开发</tag>
+      
+      <tag>Windows</tag>
+      
+      <tag>网络</tag>
+      
+      <tag>wsl</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Hexo 安装&amp;配置</title>
+    <link href="/blog/2023/01/08/Hexo-%E5%AE%89%E8%A3%85-%E9%85%8D%E7%BD%AE/"/>
+    <url>/blog/2023/01/08/Hexo-%E5%AE%89%E8%A3%85-%E9%85%8D%E7%BD%AE/</url>
+    
+    <content type="html"><![CDATA[<h1 id="hexo-安装-amp-配置"><a href="#hexo-安装-amp-配置" class="headerlink" title="hexo 安装 &amp; 配置"></a>hexo 安装 &amp; 配置</h1><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs sh"><span class="hljs-comment"># 全局安装hexo</span><br>npm install -g hexo-cli<br></code></pre></td></tr></table></figure><h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs sh"><span class="hljs-comment"># 添加环境变量 ~/npmInstall/node_global/lib/node_modules/hexo-cli/bin</span><br><br><span class="hljs-comment"># # 安装hexo fuild主题</span><br><span class="hljs-comment"># npm install --save hexo-theme-fluid</span><br><br></code></pre></td></tr></table></figure><p><em>使用npm安装fluid主题，配置文件在node_moudles中，不便于管理，故使用fork + git clone进行主题管理</em></p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">git <span class="hljs-built_in">clone</span> git@github.com:jiChen-DG/hexo-theme-fluid.git ./themes/fluid<br></code></pre></td></tr></table></figure><hr><p><a href="https://hexo.fluid-dev.com/docs/">fluid基础配置</a></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>开发</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>配置</tag>
+      
+      <tag>Linux</tag>
+      
+      <tag>开发</tag>
+      
+      <tag>博客</tag>
+      
+      <tag>Hexo</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>GoLang配置</title>
+    <link href="/blog/2023/01/08/GoLang%E9%85%8D%E7%BD%AE/"/>
+    <url>/blog/2023/01/08/GoLang%E9%85%8D%E7%BD%AE/</url>
+    
+    <content type="html"><![CDATA[<h1 id="GoLang配置"><a href="#GoLang配置" class="headerlink" title="GoLang配置"></a>GoLang配置</h1><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs sh"><span class="hljs-comment"># https://go.dev/dl/</span><br>sudo tar -C /usr/local -xzf go1.19.4.linux-amd64.tar.gz<br>tar -C /usr/local -xzf go1.19.4.linux-amd64.tar.gz<br><br>sed -i <span class="hljs-string">&#x27;1i export PATH=$PATH:/usr/local/go/bin&#x27;</span> ~/.zshrc<br><br><span class="hljs-comment"># 解决vscode安装go tools失败</span><br>go <span class="hljs-built_in">env</span> -w GO111MODULE=on<br>go <span class="hljs-built_in">env</span> -w GOPROXY=https://goproxy.io,direct<br><br><span class="hljs-built_in">source</span> ~/.zshrc<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>配置</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>配置</tag>
+      
+      <tag>Linux</tag>
+      
+      <tag>系统</tag>
+      
+      <tag>GoLang</tag>
+      
+      <tag>开发</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Debian配置</title>
     <link href="/blog/2023/01/08/Debian%E9%85%8D%E7%BD%AE/"/>
     <url>/blog/2023/01/08/Debian%E9%85%8D%E7%BD%AE/</url>
