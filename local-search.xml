@@ -4,6 +4,39 @@
   
   
   <entry>
+    <title>wsl踩坑大合集 - 01</title>
+    <link href="/blog/2023/01/11/wsl%E8%B8%A9%E5%9D%91%E5%A4%A7%E5%90%88%E9%9B%86%20-%2001/"/>
+    <url>/blog/2023/01/11/wsl%E8%B8%A9%E5%9D%91%E5%A4%A7%E5%90%88%E9%9B%86%20-%2001/</url>
+    
+    <content type="html"><![CDATA[<h1 id="wsl踩坑大合集"><a href="#wsl踩坑大合集" class="headerlink" title="wsl踩坑大合集"></a>wsl踩坑大合集</h1><p><del>wsl就是坨屎</del></p><p>重启wsl，找遍全网没看到别的解决方法，大概1-2个月会出现一次</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>配置</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>配置</tag>
+      
+      <tag>Linux</tag>
+      
+      <tag>开发</tag>
+      
+      <tag>网络</tag>
+      
+      <tag>wsl</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>nodejs 安装&amp;配置</title>
     <link href="/blog/2023/01/08/nodejs-%E5%AE%89%E8%A3%85-%E9%85%8D%E7%BD%AE/"/>
     <url>/blog/2023/01/08/nodejs-%E5%AE%89%E8%A3%85-%E9%85%8D%E7%BD%AE/</url>
