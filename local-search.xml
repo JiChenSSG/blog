@@ -4,6 +4,39 @@
   
   
   <entry>
+    <title>wsl踩坑大合集 - 02</title>
+    <link href="/blog/2023/01/13/wsl%E8%B8%A9%E5%9D%91%E5%A4%A7%E5%90%88%E9%9B%86%20-%2002/"/>
+    <url>/blog/2023/01/13/wsl%E8%B8%A9%E5%9D%91%E5%A4%A7%E5%90%88%E9%9B%86%20-%2002/</url>
+    
+    <content type="html"><![CDATA[<h1 id="wsl踩坑大合集"><a href="#wsl踩坑大合集" class="headerlink" title="wsl踩坑大合集"></a>wsl踩坑大合集</h1><p><del>wsl就是坨屎</del><br>输入以下指令，无需重启windows</p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">netsh winsock reset<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>配置</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>配置</tag>
+      
+      <tag>Linux</tag>
+      
+      <tag>开发</tag>
+      
+      <tag>网络</tag>
+      
+      <tag>wsl</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>wsl踩坑大合集 - 01</title>
     <link href="/blog/2023/01/11/wsl%E8%B8%A9%E5%9D%91%E5%A4%A7%E5%90%88%E9%9B%86%20-%2001/"/>
     <url>/blog/2023/01/11/wsl%E8%B8%A9%E5%9D%91%E5%A4%A7%E5%90%88%E9%9B%86%20-%2001/</url>

@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://jichenssg.github.io/blog/2023/01/13/wsl%E8%B8%A9%E5%9D%91%E5%A4%A7%E5%90%88%E9%9B%86%20-%2002/</loc>
+    
+    <lastmod>2023-01-13</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://jichenssg.github.io/blog/2023/01/11/wsl%E8%B8%A9%E5%9D%91%E5%A4%A7%E5%90%88%E9%9B%86%20-%2001/</loc>
     
     <lastmod>2023-01-12</lastmod>
@@ -85,7 +94,7 @@
 
   <url>
     <loc>https://jichenssg.github.io/blog</loc>
-    <lastmod>2023-01-12</lastmod>
+    <lastmod>2023-01-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -93,112 +102,112 @@
   
   <url>
     <loc>https://jichenssg.github.io/blog/tags/%E9%85%8D%E7%BD%AE/</loc>
-    <lastmod>2023-01-12</lastmod>
+    <lastmod>2023-01-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://jichenssg.github.io/blog/tags/Debian/</loc>
-    <lastmod>2023-01-12</lastmod>
+    <lastmod>2023-01-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://jichenssg.github.io/blog/tags/Linux/</loc>
-    <lastmod>2023-01-12</lastmod>
+    <lastmod>2023-01-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://jichenssg.github.io/blog/tags/%E7%B3%BB%E7%BB%9F/</loc>
-    <lastmod>2023-01-12</lastmod>
+    <lastmod>2023-01-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://jichenssg.github.io/blog/tags/GoLang/</loc>
-    <lastmod>2023-01-12</lastmod>
+    <lastmod>2023-01-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://jichenssg.github.io/blog/tags/%E5%BC%80%E5%8F%91/</loc>
-    <lastmod>2023-01-12</lastmod>
+    <lastmod>2023-01-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://jichenssg.github.io/blog/tags/%E5%8D%9A%E5%AE%A2/</loc>
-    <lastmod>2023-01-12</lastmod>
+    <lastmod>2023-01-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://jichenssg.github.io/blog/tags/Hexo/</loc>
-    <lastmod>2023-01-12</lastmod>
+    <lastmod>2023-01-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://jichenssg.github.io/blog/tags/Windows/</loc>
-    <lastmod>2023-01-12</lastmod>
+    <lastmod>2023-01-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://jichenssg.github.io/blog/tags/%E7%BD%91%E7%BB%9C/</loc>
-    <lastmod>2023-01-12</lastmod>
+    <lastmod>2023-01-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://jichenssg.github.io/blog/tags/wsl/</loc>
-    <lastmod>2023-01-12</lastmod>
+    <lastmod>2023-01-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://jichenssg.github.io/blog/tags/nodejs/</loc>
-    <lastmod>2023-01-12</lastmod>
+    <lastmod>2023-01-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://jichenssg.github.io/blog/tags/npm/</loc>
-    <lastmod>2023-01-12</lastmod>
+    <lastmod>2023-01-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://jichenssg.github.io/blog/tags/x86%E6%B1%87%E7%BC%96/</loc>
-    <lastmod>2023-01-12</lastmod>
+    <lastmod>2023-01-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://jichenssg.github.io/blog/tags/%E7%A1%AC%E4%BB%B6%E4%BA%A4%E4%BA%92/</loc>
-    <lastmod>2023-01-12</lastmod>
+    <lastmod>2023-01-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://jichenssg.github.io/blog/tags/%E7%A1%AC%E7%9B%98%E8%AF%BB%E5%86%99/</loc>
-    <lastmod>2023-01-12</lastmod>
+    <lastmod>2023-01-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
@@ -207,14 +216,14 @@
   
   <url>
     <loc>https://jichenssg.github.io/blog/categories/%E9%85%8D%E7%BD%AE/</loc>
-    <lastmod>2023-01-12</lastmod>
+    <lastmod>2023-01-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://jichenssg.github.io/blog/categories/%E5%BC%80%E5%8F%91/</loc>
-    <lastmod>2023-01-12</lastmod>
+    <lastmod>2023-01-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
